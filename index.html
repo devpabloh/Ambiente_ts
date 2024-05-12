@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiente de testes</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="carregar" onclick="carregar()">
+    <div id="foto">
+        <img src="/freefire.svg" alt="" id="imagem">
+    </div>
+
+    <script>
+        
+        function carregar(){
+            let img = window.document.getElementById('imagem');
+
+            let nomeAtualDoArquivo = img.src.split('/').pop();
+
+            if(nomeAtualDoArquivo === "freefire.svg"){
+                img.src = '/algumacoisa.svg'
+            }else{
+                img.src = '/freefire.svg'
+            }
+        }
+    </script>   
+</body>
+</html>
