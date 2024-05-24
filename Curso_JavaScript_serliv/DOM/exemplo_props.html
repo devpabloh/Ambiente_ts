@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form action="">
+        <input type="text" id="txtNome" placeholder="Nome"><br><br>
+        <input type="text" id="txtEmail" placeholder="E-mail"><br><br>
+
+        <input type="button" value="" id="contrato">
+        <label for="contrato">Li e aceito o contrato</label><br><br>
+        <textarea name="" id="" cols="30" rows="10">
+            Este contrato...
+        </textarea>
+    </form>
+    <script>
+        const txtNome = document.querySelector("#txtNome")
+        const txtEmail = document.getElementById("txtEmail")
+        const labelContrato = document.querySelector("label[for='contrato']")
+        txtNome.value = "Pablo"
+        txtNome.disabled = true
+
+        txtEmail.readOnly //readOnly é usado para aquela tag ser apenas para leitura, ou seja, não se pode editar a mesma.
+        console.log(labelContrato)
+    </script>
+</body>
+</html>
