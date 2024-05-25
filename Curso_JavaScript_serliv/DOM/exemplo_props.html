@@ -15,17 +15,48 @@
         <label for="contrato">Li e aceito o contrato</label><br><br>
         <textarea name="" id="" cols="30" rows="10">
             Este contrato...
-        </textarea>
+        </textarea><br><br>
+        <button id="buttonCadastrar" disabled>Cadastrar</button>
     </form>
     <script>
-        const txtNome = document.querySelector("#txtNome")
+    /*     const txtNome = document.querySelector("#txtNome")
         const txtEmail = document.getElementById("txtEmail")
-        const labelContrato = document.querySelector("label[for='contrato']")
+        
+
         txtNome.value = "Pablo"
         txtNome.disabled = true
 
         txtEmail.readOnly //readOnly é usado para aquela tag ser apenas para leitura, ou seja, não se pode editar a mesma.
-        console.log(labelContrato)
+        let labelContrato = document.querySelector("label[for='contrato']")
+        let inputContrato = document.getElementById('contrato')
+        let cadastrar = document.getElementById('buttonCadastrar')
+        inputContrato.addEventListner('change',function(){
+            
+            if(this.checked){
+                cadastrar.disabled = false
+            }else{
+                cadastrar.disabled = true
+            }
+            
+        }); */
+
+        
+        
+        let inputContrato = document.getElementById('contrato')
+        let buttonCadastrar = document.getElementById('buttonCadastrar')
+        
+        inputContrato.addEventListener('change', function(){
+
+        
+
+            if(this.checked){
+                console.log('Está marcado')
+            }else{
+                console.log('Não está marcado')
+            }
+        })
+
+
     </script>
 </body>
 </html>
