@@ -18,14 +18,31 @@
         <tbody>
             <tr>
                 <td>Pablo</td>
-                <td><input type="text" id="notas"></td>
-                <td><input type="text" id="notas"></td>
-                <td><button onclick="calcularMedia()">Calcular média</button></td>
+                <td><input type="text" class="nota" value="4"></td>
+                <td><input type="text" class="nota" value="5"></td>
+                <td><span class="resultado">O resultado da soma é:</span></td>
+                <td><button id="button" onclick="somar()">Calcular Soma</button></td>
+
             </tr>
         </tbody>
     </table>
 
-    <script src="calcularMedia.js"></script>
+    <script>
+        function somar(){
+            let notas = document.querySelectorAll(".nota")
+            let soma = 0
+            for(let i = 0; i < notas.length; i++){
+                        let valor = Number(notas[i].value)
+                            if(!isNaN(valor)){
+                                soma += valor
+                            }
+                    }
+            document.querySelector(".resultado").textContent = soma
+        
+        }
+        
+    
+    </script>
     
 </body>
 </html>

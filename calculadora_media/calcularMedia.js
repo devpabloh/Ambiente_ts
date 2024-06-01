@@ -1,13 +1,16 @@
 
-function calcularMedia(){
+function calcularMedia(button){
+
+    let row = button.closet('tr')
+
     // Primeiro vamos obter as informações das notas
-    let notas = document.querySelectorAll(".notas")
+    let notas = row.querySelectorAll(".notas")
     let soma = 0
     let quantidade = notas.length
     
     (function calcularMedia(){
-        notas.forEach(function(notas){
-            let valor = parseFloat(notas.value)
+        notas.forEach(function(nota){
+            let valor = parseFloat(nota.value)
             if (isNaN(valor)){
                 soma += valor
             }
@@ -15,7 +18,7 @@ function calcularMedia(){
 
         let media = soma / quantidade
     
-        document.getElementById("").textContent = media
+        document.getElementById("resultado").textContent = media
     })
 }
 
