@@ -7,39 +7,69 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <table>
-        <thead>
-            <th>Nome</th>
-            <th>Nota 1</th>
-            <th>Nota 2</th>
-            <th>Nota 3</th>
-            <th>Nota 4</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Pablo</td>
-                <td><input type="text" class="nota" value="4"></td>
-                <td><input type="text" class="nota" value="5"></td>
-                <td><span class="resultado">O resultado da soma é:</span></td>
-                <td><button id="button" onclick="somar()">Calcular Soma</button></td>
-
-            </tr>
-        </tbody>
-    </table>
+    <main class="container_conteudo">
+        <table class="container_table">
+            <thead>
+                <th>Aluno</th>
+                <th>Nota</th>
+                <th>Nota</th>
+                <th>Nota</th>
+                <th>Nota</th>
+                <th>Resultado</th>
+            </thead>
+            <tbody id="table-body">
+                <tr class="container_tr">
+                    <td><input type="text" class="nomeAluno" placeholder="nome do aluno"></td>
+                    <td><input type="text" class="nota" placeholder="Primeira nota"></td>
+                    <td><input type="text" class="nota" placeholder="Segunda nota" ></td>
+                    <td><input type="text" class="nota" placeholder="Terceira nota"></td>
+                    <td><input type="text" class="nota" placeholder="Quarta nota"></td>
+                    <td><input type="text" class="resultado" readonly></td>
+                    <td><button id="button" onclick="somar()">Calcular média</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="container_navegacao">
+            <div><button class="addAluno" onclick="adicionarAluno(this)">Adicionar Aluno</button></div>
+        </nav>
+    </main>
 
     <script>
-        function somar(){
-            let notas = document.querySelectorAll(".nota")
+
+    function somar(){
+        let tr = button.closest('.container_tr');
+        let notas = tr.querySelectorAll(".nota");
             let soma = 0
+            let count = 0
             for(let i = 0; i < notas.length; i++){
                         let valor = Number(notas[i].value)
-                            if(!isNaN(valor)){
+                            if(!isNaN(valor) && notas[i].value.trim() !==""){
                                 soma += valor
+                                count++
                             }
+                            
                     }
-            document.querySelector(".resultado").textContent = soma
-        
+            let media = count > 0 ? soma / count: 0;
+            tr.querySelector(".resultado").value = media
         }
+
+        function adicionarAluno(){
+            let tbody = document.getElementById('table-body')
+            let novaLinha = document.createElement('tr')
+            novaLinha.classList.add('container_tr')
+
+            novaLinha.innerHTML = `
+                <td><input type="text" class="nomeAluno" placeholder="nome do aluno"></td>
+                <td><input type="text" class="nota" placeholder="Primeira nota"></td>
+                <td><input type="text" class="nota" placeholder="Segunda nota" ></td>
+                <td><input type="text" class="nota" placeholder="Terceira nota"></td>
+                <td><input type="text" class="nota" placeholder="Quarta nota"></td>
+                <td><input type="text" class="resultado" readonly></td>
+                <td><button id="button" onclick="somar(this)">Calcular média</button></td>
+            `
+            tbody.appendChild(novaLinha)
+        }
+        
         
     
     </script>
