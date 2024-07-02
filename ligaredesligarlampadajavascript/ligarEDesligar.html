@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligar e desligar lampada</title>
+</head>
+<body>
+    <!-- Lembrar que tem que alterar a imagem para a de uma lampada acesa e uma desligada, ainda não fiz isso. -->
+    <h2>O que o JavaScript pode fazer?</h2>
+
+    <p>JavaScript pode alterar valores de atributos HTML.</p>
+
+    <p>Neste caso, o JavaScript altera o valor do atributo src (fonte) de uma imagem.</p>
+
+    <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Acenda a luz</button>
+
+    <img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">desligue a luz</button>
+    <hr>
+
+    <p>JavaScript pode mostrar elementos HTML ocultos.</p>
+
+    <p id="demo" style="display:none">Olá JavaScript!</p>
+
+    <button type="button" onclick="document.getElementById('demo').style.display='block'">Click aqui!</button>
+    <hr>
+
+    <p id="demo">JavaScript pode alterar o estilo de um elemento HTML.</p>
+
+    <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click aqui!</button>
+    <hr>
+
+    <p id="demo">JavaScript pode ocultar elementos HTML.</p>
+
+    <button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
+    <hr>
+
+    <h1>JavaScript Output / saídas JavaScript</h1>
+    <h2>Possibilidades de exibição de JavaScript</h2>
+
+    <p>O JavaScript pode "exibir" dados de diferentes maneiras:</p>
+
+    <ul>
+        <li>Gravando em um elemento HTML, usando .innerHTML: modifica o conteúdo HTML de um elemento específico, uma vantagem é que permite atualizar dinamicamente partes especificas da página sem recarregar a página inteira.</li>
+        <li>Gravando na saída HTML usando o .document.write(): Escreve diretamente no fluxo de documento da página web, a vantagem é ser simples para adicionar conteúdo durante o carregamento inicial da página, agora temos que tomar cuidado, porque se o mesmo for usado depois do carregamento da página, pode apagar todo o conteúdo existente na mesma. É geralmente desencorajado para manipulação de DOM depois que a página é carregada</li>
+        <li>Gravando em uma caixa de alerta, usando o .window.alert(): Exibe uma caixa de diálogo modal contendo uma mensagem e um botão OK. Bom para alertar aos usuários sobre informações ou erros. Uma implicação é que interrompe a interação do usuário com a página até que a caixa de alerta seja fechada. Pode ser intrusivo e irritante para os usuários se usado com muita frequência</li>
+        <li>Gravando no console do navegador, usando o .console.log(): Exibe informações no console do navegador. É útil para depuração e registro de informações durante o desenvolvimento. As mensagens são visíveis apenas para desenvolvedores e não afetam a experiência do usuário final. Não deve ser usado para fornecer FeedBack ao usuário.</li>
+    </ul>
+
+
+
+</body>
+</html> 
+</body>
+</html>
